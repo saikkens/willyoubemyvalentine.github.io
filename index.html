@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Moving Button</title>
+        <style>
+            body {
+                margin: 0;
+                height: 100vh;
+                width: 100vw;
+                background-color: #333;
+            }
+            .wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                flex-direction: column;
+            }
+            span {
+                color: #eee;
+            }
+            button {
+                cursor: pointer;
+                position: absolute;
+                width: fit-content;
+                height: fit-content;
+                transition: all 0.2s;
+                border-radius: 8px;
+            }
+            #yes {
+                transform: translate(-50px, 120px);
+            }
+            #no {
+                transform: translate(50px, 120px);
+            }
+        </style>
+    </head>
+    <body>
+
+        <embed height="0" width="0"
+          src="http://youtube.googleapis.com/v/GlhJyjC0Pog&autoplay=1&loop=1" />
+          
+        
+        <div style="position: fixed; z-index: -90; width: 100%; height: 110%">
+          <img frameborder="0" height="100%" width="100%"
+            src="https://i.imgur.com/qmaJsxL.gif" />
+
+        </div>  
+          
+          
+          
+          
+        <div class="wrapper">
+            <span id="msg">eli, will you please be my valentine?</span>
+            <img src="https://media.tenor.com/tVjoj2nkKvkAAAAj/huh-looking.gif" width=auto height="180" alt="" id="sticker" />
+            <button id="yes">YES</button>
+            <button id="no">NO</button>
+        </div>
+
+        <script>
+        
+            document.getElementById("yes").addEventListener("click", myFunction);
+            
+            function myFunction (){
+                msg.innerHTML = "yay!! see you on feb 14th bang! &#128521";
+                sticker.src ='https://i.imgur.com/sd2dJje.gif';
+            }
+            
+            let no = document.getElementById('no');
+            let sticker = document.getElementById('sticker');
+            let msg = document.getElementById('msg');
+            let gak = 0;
+            no.addEventListener('click', function () {
+                let randX = Math.random() * 70;
+                let randY = Math.random() * 80;
+
+                no.style.left = randX + '%';
+                no.style.top = randY + '%';
+
+                gak++;
+                if (gak == 1) {
+                    msg.innerHTML = 'why no &#128542';
+                    sticker.src = 'https://media.tenor.com/VDUojADM6TEAAAAj/yaseen.gif';
+                }
+                if (gak == 2) {
+                    msg.innerHTML = 'blehhhh wrong answer &#128541';
+                    sticker.src = 'https://media.tenor.com/sq91_zcvgsIAAAAj/cat-tease.gif';
+                }
+                if (gak == 3) {
+                    msg.innerHTML = 'HAHAHA still wrong answer &#128519';
+                    sticker.src = 'https://media.tenor.com/Pf6kEyHEsnMAAAAj/risada.gif';
+                }
+                if (gak == 4) {
+                    msg.innerHTML = 'correct answer hint: yes &#129299';
+                    sticker.src = 'https://media.tenor.com/xBF0HstBso8AAAAj/peachandgoma.gif';
+                }
+                if (gak == 5) {
+                    msg.innerHTML = 'hmmmmm hehe &#128527';
+                    sticker.src = 'https://media.tenor.com/evMwgWDLI7cAAAAj/peach-cute.gif';
+                }
+                if (gak == 6) {
+                    msg.innerHTML = 'youre such a cutie &#128536';
+                    sticker.src = 'https://media.tenor.com/c9tu8_KoqlUAAAAj/cuddles-panda.gif';
+                }
+                if (gak == 7) {
+                    msg.innerHTML = 'pwissss &#129402';
+                    sticker.src = 'https://media.tenor.com/wsVaAXbCmWUAAAAj/mochi-mochi-peach-cute-cat.gif';
+                }
+                if (gak >= 8) {
+                    msg.innerHTML = 'come here... so me and you = date &#128548';
+                    sticker.src = 'https://media.tenor.com/pZDCJwlRuSgAAAAj/cute.gif';
+                }
+            });
+        </script>
+    </body>
+</html>
